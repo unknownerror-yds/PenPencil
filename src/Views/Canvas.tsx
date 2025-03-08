@@ -1,9 +1,8 @@
 "use client";
 
 import type React from "react";
-
 import { useState, useRef, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/components/ui/button";
 import {
   Tooltip,
@@ -152,7 +151,7 @@ export default function CanvasPage() {
       if (canvas) {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.beginPath();
-        ctx.arc(prevPos.x, prevPos.y, radius, 0, 2 * Math.PI);
+        ctx.arc(prevPos.x, radius, radius, 0, 2 * Math.PI);
         ctx.stroke();
       }
     }
@@ -184,16 +183,16 @@ export default function CanvasPage() {
   };
 
   return (
-    <div className="flex flex-col h-screen">
-      <header className="border-b bg-background">
+    <div className="flex flex-col">
+      <header className="border-b bg-[#FFFFFF]">
         <div className="container flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-4">
-            <Link href="/">
+            <Link to="/">
               <Button variant="ghost" size="icon">
-                <ArrowLeft className="h-5 w-5" />
+                <ArrowLeft className="h-5 w-5 text-[#333333]" />
               </Button>
             </Link>
-            <span className="text-xl font-bold">DrawCanvas</span>
+            <span className="text-xl font-bold text-[#333333]">PenPencil</span>
           </div>
           <div className="flex items-center space-x-1">
             <TooltipProvider>
@@ -204,7 +203,7 @@ export default function CanvasPage() {
                     size="icon"
                     onClick={() => handleToolChange("pen")}
                   >
-                    <PenLine className="h-5 w-5" />
+                    <PenLine className="h-5 w-5 text-[#333333]" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>Pen</TooltipContent>
@@ -219,7 +218,7 @@ export default function CanvasPage() {
                     size="icon"
                     onClick={() => handleToolChange("pencil")}
                   >
-                    <Pencil className="h-5 w-5" />
+                    <Pencil className="h-5 w-5 text-[#333333]" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>Pencil</TooltipContent>
@@ -234,7 +233,7 @@ export default function CanvasPage() {
                     size="icon"
                     onClick={() => handleToolChange("eraser")}
                   >
-                    <Eraser className="h-5 w-5" />
+                    <Eraser className="h-5 w-5 text-[#333333]" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>Eraser</TooltipContent>
@@ -249,7 +248,7 @@ export default function CanvasPage() {
                     size="icon"
                     onClick={() => handleToolChange("square")}
                   >
-                    <Square className="h-5 w-5" />
+                    <Square className="h-5 w-5 text-[#333333]" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>Square</TooltipContent>
@@ -264,7 +263,7 @@ export default function CanvasPage() {
                     size="icon"
                     onClick={() => handleToolChange("circle")}
                   >
-                    <Circle className="h-5 w-5" />
+                    <Circle className="h-5 w-5 text-[#333333]" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>Circle</TooltipContent>
@@ -279,7 +278,7 @@ export default function CanvasPage() {
                     size="icon"
                     onClick={() => handleToolChange("text")}
                   >
-                    <Type className="h-5 w-5" />
+                    <Type className="h-5 w-5 text-[#333333]" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>Text</TooltipContent>
@@ -300,7 +299,9 @@ export default function CanvasPage() {
               <PopoverContent className="w-64">
                 <div className="grid gap-4">
                   <div className="space-y-2">
-                    <h4 className="font-medium leading-none">Color</h4>
+                    <h4 className="font-medium leading-none text-[#333333]">
+                      Color
+                    </h4>
                     <input
                       type="color"
                       value={color}
@@ -338,13 +339,15 @@ export default function CanvasPage() {
             <Popover>
               <PopoverTrigger asChild>
                 <Button variant="outline" size="icon">
-                  <Palette className="h-5 w-5" />
+                  <Palette className="h-5 w-5 text-[#333333]" />
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-64">
                 <div className="grid gap-4">
                   <div className="space-y-2">
-                    <h4 className="font-medium leading-none">Brush Size</h4>
+                    <h4 className="font-medium leading-none text-[#333333]">
+                      Brush Size
+                    </h4>
                     <Slider
                       value={[size]}
                       min={1}
@@ -352,7 +355,7 @@ export default function CanvasPage() {
                       step={1}
                       onValueChange={(value) => setSize(value[0])}
                     />
-                    <div className="text-center">{size}px</div>
+                    <div className="text-center text-[#333333]">{size}px</div>
                   </div>
                 </div>
               </PopoverContent>
@@ -364,7 +367,7 @@ export default function CanvasPage() {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Button variant="outline" size="icon" onClick={clearCanvas}>
-                    <Trash2 className="h-5 w-5" />
+                    <Trash2 className="h-5 w-5 text-[#333333]" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>Clear Canvas</TooltipContent>
@@ -379,7 +382,7 @@ export default function CanvasPage() {
                     size="icon"
                     onClick={downloadCanvas}
                   >
-                    <Download className="h-5 w-5" />
+                    <Download className="h-5 w-5 text-[#333333]" />
                   </Button>
                 </TooltipTrigger>
                 <TooltipContent>Download</TooltipContent>
