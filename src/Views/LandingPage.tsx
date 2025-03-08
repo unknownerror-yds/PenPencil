@@ -42,7 +42,7 @@ export default function LandingPage() {
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-[#333333]">
                   Unleash Your Creativity with PenPencil
                 </h1>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl text-[#666666]">
+                <p className="mx-auto max-w-[700px] md:text-xl text-[#666666]">
                   Create stunning digital art with our intuitive drawing tools.
                   Start with a blank canvas and bring your ideas to life.
                 </p>
@@ -79,7 +79,7 @@ export default function LandingPage() {
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#333333]">
                   Powerful Drawing Tools
                 </h2>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-[#666666]">
+                <p className="mx-auto max-w-[700px] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-[#666666]">
                   Everything you need to create amazing digital artwork in one
                   place.
                 </p>
@@ -94,7 +94,7 @@ export default function LandingPage() {
                   <h3 className="text-xl font-bold text-[#333333]">
                     Drawing Tools
                   </h3>
-                  <p className="text-muted-foreground text-[#666666]">
+                  <p className=" text-[#666666]">
                     Choose from a variety of tools including pen, pencil, brush,
                     and more to create your masterpiece.
                   </p>
@@ -108,7 +108,7 @@ export default function LandingPage() {
                   <h3 className="text-xl font-bold text-[#333333]">
                     Color Options
                   </h3>
-                  <p className="text-muted-foreground text-[#666666]">
+                  <p className="text-[#666666]">
                     Access a full color palette with custom color picker to find
                     the perfect shade for your artwork.
                   </p>
@@ -122,7 +122,7 @@ export default function LandingPage() {
                   <h3 className="text-xl font-bold text-[#333333]">
                     Special Effects
                   </h3>
-                  <p className="text-muted-foreground text-[#666666]">
+                  <p className="text-[#666666]">
                     Add special effects, filters, and transformations to enhance
                     your drawings with just a few clicks.
                   </p>
@@ -150,7 +150,7 @@ export default function LandingPage() {
               PenPencil
             </span>
           </div>
-          <p className="text-xs text-muted-foreground md:ml-auto text-[#666666]">
+          <p className="text-xs md:ml-auto text-[#666666]">
             &copy; {new Date().getFullYear()} PenPencil. All rights reserved.
           </p>
           <nav className="flex gap-4 sm:gap-6">
