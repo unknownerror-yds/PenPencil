@@ -200,6 +200,9 @@ export default function CanvasPage() {
                 <TooltipTrigger asChild>
                   <Button
                     variant={tool === "pen" ? "default" : "outline"}
+                    className={
+                      tool === "pen" ? "bg-[#FACC2E] hover:bg-[#FACC2E]" : ""
+                    }
                     size="icon"
                     onClick={() => handleToolChange("pen")}
                   >
@@ -216,6 +219,7 @@ export default function CanvasPage() {
                   <Button
                     variant={tool === "pencil" ? "default" : "outline"}
                     size="icon"
+                    className={tool === "pencil" ? "bg-[#FACC2E]" : ""}
                     onClick={() => handleToolChange("pencil")}
                   >
                     <Pencil className="h-5 w-5 text-[#333333]" />
@@ -232,6 +236,7 @@ export default function CanvasPage() {
                     variant={tool === "eraser" ? "default" : "outline"}
                     size="icon"
                     onClick={() => handleToolChange("eraser")}
+                    className={tool === "eraser" ? "bg-[#FACC2E]" : ""}
                   >
                     <Eraser className="h-5 w-5 text-[#333333]" />
                   </Button>
@@ -247,6 +252,7 @@ export default function CanvasPage() {
                     variant={tool === "square" ? "default" : "outline"}
                     size="icon"
                     onClick={() => handleToolChange("square")}
+                    className={tool === "square" ? "bg-[#FACC2E]" : ""}
                   >
                     <Square className="h-5 w-5 text-[#333333]" />
                   </Button>
@@ -262,6 +268,7 @@ export default function CanvasPage() {
                     variant={tool === "circle" ? "default" : "outline"}
                     size="icon"
                     onClick={() => handleToolChange("circle")}
+                    className={tool === "circle" ? "bg-[#FACC2E]" : ""}
                   >
                     <Circle className="h-5 w-5 text-[#333333]" />
                   </Button>
@@ -277,6 +284,7 @@ export default function CanvasPage() {
                     variant={tool === "text" ? "default" : "outline"}
                     size="icon"
                     onClick={() => handleToolChange("text")}
+                    className={tool === "text" ? "bg-[#FACC2E]" : ""}
                   >
                     <Type className="h-5 w-5 text-[#333333]" />
                   </Button>
