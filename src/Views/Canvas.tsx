@@ -170,11 +170,12 @@ export default function CanvasPage() {
   };
 
   const downloadCanvas = () => {
-    if (!canvasRef.current) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
     const link = document.createElement("a");
     link.download = "drawing.png";
-    link.href = canvasRef.current.toDataURL("image/png");
+    link.href = canvas.toDataURL("image/png");
     link.click();
   };
 
@@ -183,8 +184,8 @@ export default function CanvasPage() {
   };
 
   return (
-    <div className="flex flex-col">
-      <header className="border-b bg-[#FFFFFF]">
+    <div className="flex flex-col w-full h-full">
+      <header className="border-b bg-[#FFFFFF] sticky top-0 z-50">
         <div className="container flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-4">
             <Link to="/">
@@ -219,7 +220,9 @@ export default function CanvasPage() {
                   <Button
                     variant={tool === "pencil" ? "default" : "outline"}
                     size="icon"
-                    className={tool === "pencil" ? "bg-[#FACC2E]" : ""}
+                    className={
+                      tool === "pencil" ? "bg-[#FACC2E] hover:bg-[#FACC2E]" : ""
+                    }
                     onClick={() => handleToolChange("pencil")}
                   >
                     <Pencil className="h-5 w-5 text-[#333333]" />
@@ -236,7 +239,9 @@ export default function CanvasPage() {
                     variant={tool === "eraser" ? "default" : "outline"}
                     size="icon"
                     onClick={() => handleToolChange("eraser")}
-                    className={tool === "eraser" ? "bg-[#FACC2E]" : ""}
+                    className={
+                      tool === "eraser" ? "bg-[#FACC2E] hover:bg-[#FACC2E]" : ""
+                    }
                   >
                     <Eraser className="h-5 w-5 text-[#333333]" />
                   </Button>
@@ -252,7 +257,9 @@ export default function CanvasPage() {
                     variant={tool === "square" ? "default" : "outline"}
                     size="icon"
                     onClick={() => handleToolChange("square")}
-                    className={tool === "square" ? "bg-[#FACC2E]" : ""}
+                    className={
+                      tool === "square" ? "bg-[#FACC2E] hover:bg-[#FACC2E]" : ""
+                    }
                   >
                     <Square className="h-5 w-5 text-[#333333]" />
                   </Button>
@@ -268,7 +275,9 @@ export default function CanvasPage() {
                     variant={tool === "circle" ? "default" : "outline"}
                     size="icon"
                     onClick={() => handleToolChange("circle")}
-                    className={tool === "circle" ? "bg-[#FACC2E]" : ""}
+                    className={
+                      tool === "circle" ? "bg-[#FACC2E] hover:bg-[#FACC2E]" : ""
+                    }
                   >
                     <Circle className="h-5 w-5 text-[#333333]" />
                   </Button>
@@ -284,7 +293,9 @@ export default function CanvasPage() {
                     variant={tool === "text" ? "default" : "outline"}
                     size="icon"
                     onClick={() => handleToolChange("text")}
-                    className={tool === "text" ? "bg-[#FACC2E]" : ""}
+                    className={
+                      tool === "text" ? "bg-[#FACC2E] hover:bg-[#FACC2E]" : ""
+                    }
                   >
                     <Type className="h-5 w-5 text-[#333333]" />
                   </Button>

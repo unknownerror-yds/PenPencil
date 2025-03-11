@@ -4,7 +4,9 @@ import AllRoute from "./Routes/AllRoutes";
 function App() {
   return (
     <div className="flex h-screen w-screen">
-      <AllRoute />
+      <div className=" w-full h-full">
+        <AllRoute />
+      </div>
     </div>
   );
 }

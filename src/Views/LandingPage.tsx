@@ -1,6 +1,7 @@
 import { PenLine, Palette, Sparkles } from "lucide-react";
 import { Button } from "@/components/components/ui/button";
 import { Link } from "react-router-dom";
+import Sessions from "./Sessions";
 
 export default function LandingPage() {
   return (
@@ -15,8 +16,8 @@ export default function LandingPage() {
             <Link to="/" className="text-sm font-medium text-[#333333]">
               Home
             </Link>
-            <Link to="#features" className="text-sm font-medium text-[#333333]">
-              Features
+            <Link to="/sessions" className="text-sm font-medium text-[#333333]">
+              My Canvas
             </Link>
             <Link to="#" className="text-sm font-medium text-[#333333]">
               Gallery
